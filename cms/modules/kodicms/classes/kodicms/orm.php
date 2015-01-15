@@ -333,13 +333,13 @@ class KodiCMS_ORM extends Kohana_ORM {
 		return $this;
 	}
 		
-	public function before_save()	{ return TRUE; }
-    public function before_create() { return TRUE; }
-    public function before_update() { return TRUE; }
-    public function before_delete() { return TRUE; }
+	public function before_save()		{ return TRUE; }
+    public function before_create()		{ return TRUE; }
+    public function before_update()		{ return TRUE; }
+    public function before_delete()		{ return TRUE; }
 
-    public function after_save()	{}
-    public function after_create()	{}
-    public function after_update()	{}
-    public function after_delete( $id )	{}
+    public function after_save()		{}
+    public function after_create()		{}
+    public function after_update()		{}
+    public function after_delete($id)	{}
 }

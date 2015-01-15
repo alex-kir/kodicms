@@ -19,7 +19,7 @@ Route::set('api', '(<backend>/)api(/<directory>)-<controller>(.<action>)(/<id>)'
 Observer::observe('modules::after_load', function() {
 	if (IS_INSTALLED AND ACL::check('system.api'))
 	{
-		Observer::observe('view_setting_plugins', 'api_mode_settings_page');
+		Observer::observe('view::settings::after', 'api_mode_settings_page');
 		Observer::observe('validation_settings', 'api_mode_validation_settings');
 
 		function api_mode_validation_settings($validation, $filter)

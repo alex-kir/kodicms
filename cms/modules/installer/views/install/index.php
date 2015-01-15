@@ -20,7 +20,7 @@
 		<h1><?php echo __('Environment Tests'); ?></h1>
 		<div>
 			<?php echo $env_test; ?>
-			<?php Observer::notify('installer_step_environment', $data); ?>
+			<?php Observer::notify('view::installer::step::environment', $data); ?>
 		</div>
 		<h1><?php echo __('Database information'); ?></h1>
 		<div>
@@ -221,7 +221,7 @@
 					</div>
 				</div>
 			</div>
-			<?php Observer::notify('installer_step_site_imformation', $data); ?>
+			<?php Observer::notify('view::installer::step::site_imformation', $data); ?>
 		</div>
 
 		<h1><?php echo __('Other'); ?></h1>
@@ -242,10 +242,10 @@
 				</div>
 			</div>
 
-			<?php Observer::notify('installer_step_other', $data); ?>
+			<?php Observer::notify('view::installer::step::other', $data); ?>
 		</div>
 
-		<?php Observer::notify('installer_step_new', $data); ?>
+		<?php Observer::notify('view::installer::step::new', $data); ?>
 	</div>
 	<?php echo Form::close(); ?>
 </div>

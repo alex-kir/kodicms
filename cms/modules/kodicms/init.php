@@ -71,6 +71,6 @@ Observer::observe('modules::after_load', function() {
 		->js(NULL . I18n::lang_short(), ADMIN_RESOURCES . 'libs/validation/localization/messages_' . I18n::lang_short() . '.min.js', 'validate');
 });
 
-Observer::observe('view_setting_plugins', function() {
+Observer::observe('view::settings::after', function() {
 	echo View::factory('ace/settings');
 });

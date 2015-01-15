@@ -10,15 +10,15 @@ Cache::$default = defined('CACHE_TYPE')
 Observer::observe('modules::after_load', function() {
 	if (IS_INSTALLED AND ACL::check('system.cache.settings'))
 	{
-		Observer::observe('view_setting_plugins', function() {
+		Observer::observe('view::settings::after', function() {
 			echo View::factory('cache/settings');
 		});
 
-		Observer::observe('validation_settings', function( $validation, $filter ) {
+		Observer::observe('validation_settings', function($validation, $filter) {
 			$filter
-			->rule('cache.front_page', 'intval')
-			->rule('cache.page_parts', 'intval')
-			->rule('cache.tags', 'intval');
+				->rule('cache.front_page', 'intval')
+				->rule('cache.page_parts', 'intval')
+				->rule('cache.tags', 'intval');
 		});
 	}
 });

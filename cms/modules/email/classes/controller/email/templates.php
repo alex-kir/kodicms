@@ -92,7 +92,6 @@ class Controller_Email_Templates extends Controller_System_Backend {
 				))->write();
 
 				Messages::success(__('Email template has been saved!'));
-				Observer::notify('email_templates_add', $template);
 			}
 		}
 		catch (ORM_Validation_Exception $e)

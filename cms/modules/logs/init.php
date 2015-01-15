@@ -8,7 +8,7 @@ Observer::observe('view_user_profile_information', function($user_id) {
 	));
 });
 
-Observer::observe('view_setting_plugins', function() {
+Observer::observe('view::settings::after', function() {
 	echo View::factory('logs/settings');
 });
 

@@ -7,6 +7,6 @@ Assets_Package::add('gridster')
 	->js(NULL, ADMIN_RESOURCES . 'libs/gridster/jquery.gridster.js', 'jquery')
 	->css(NULL, ADMIN_RESOURCES . 'libs/gridster/jquery.gridster.css');
 
-Observer::observe('view_setting_plugins', function() {
+Observer::observe('view::settings::after', function() {
 	echo View::factory('dashboard/settings');
 });

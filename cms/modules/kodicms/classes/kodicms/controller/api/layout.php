@@ -44,7 +44,7 @@ class KodiCMS_Controller_API_Layout extends Controller_System_Api {
 			}
 
 			$this->message('Layout has been saved!');
-			Observer::notify('layout_after_edit', $layout);
+			Observer::notify('controller::layout::after_edit', $layout);
 		}
 		
 		$this->response($layout);
@@ -66,7 +66,7 @@ class KodiCMS_Controller_API_Layout extends Controller_System_Api {
 		{
 			$this->json_redirect('layout/edit/' . $layout->name);
 			$this->message('Layout has been saved!');
-			Observer::notify('layout_after_add', $layout);
+			Observer::notify('controller::layout::after_add', $layout);
 		}
 		
 		$this->response($layout);
@@ -91,6 +91,7 @@ class KodiCMS_Controller_API_Layout extends Controller_System_Api {
 		{
 			if ($layout->delete())
 			{
+				Observer::notify('controller::layout::after_delete', $layout_name);
 				$this->response($layout);
 			}
 			else

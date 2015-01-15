@@ -129,7 +129,7 @@ class Model_Email_Template extends ORM
 	 * @return bool
 	 * @throws Kohana_Exception
 	 */
-	public function send( array $options = NULL )
+	public function send(array $options = NULL)
 	{
 		if (!$this->_loaded)
 		{

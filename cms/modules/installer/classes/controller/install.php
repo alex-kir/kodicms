@@ -62,8 +62,6 @@ class Controller_Install extends Controller_System_Frontend
 		try
 		{
 			$this->_installer->install($post);
-			
-			Observer::notify('after_install', $post);
 			Cache::clear_file();			
 		}
 		catch (Validation_Exception $e)

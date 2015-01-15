@@ -1,6 +1,6 @@
 <?php defined('SYSPATH') or die('No direct access allowed.');
 
-Observer::observe('frontpage_requested', function($request_uri) {
+Observer::observe('frontpage::requested', function($request_uri) {
 	$server_uri = $_SERVER['REQUEST_URI'];
 	$server_uri = trim(parse_url($server_uri, PHP_URL_PATH), '/');
 

@@ -2,7 +2,7 @@
 
 if ($plugin->get('maintenance_mode') == Config::YES AND !Auth::is_logged_in())
 {
-	Observer::observe('frontpage_requested', function() {
+	Observer::observe('frontpage::requested', function() {
 		$page = DB::select()
 			->from('pages')
 			->where('behavior_id', '=', 'maintenance_mode')

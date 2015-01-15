@@ -153,7 +153,8 @@
 			</div>
 		</div>
 	</div>
-	<?php Observer::notify( 'view_setting_plugins' ); ?>
+
+	<?php Observer::notify('view::settings::after'); ?>
 
 	<div class="form-actions panel-footer">
 		<?php echo Form::button('submit', UI::icon('check') . ' ' . __('Save settings'), array(

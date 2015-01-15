@@ -142,7 +142,6 @@ class Task_Install extends Minion_Task
 		try
 		{
 			$this->_installer->install($params);
-			Observer::notify('after_install', $params);
 			Cache::clear_file();
 			
 			Minion_CLI::write('==============================================');

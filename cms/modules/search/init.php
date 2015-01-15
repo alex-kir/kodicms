@@ -2,7 +2,7 @@
 
  if (IS_INSTALLED AND ACL::check('system.search.settings'))
 {
-	Observer::observe('view_setting_plugins', function() {
+	Observer::observe('view::settings::after', function() {
 		echo View::factory('search/settings');
 	});
 

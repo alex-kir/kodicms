@@ -4,7 +4,7 @@
 {
 	if (ACL::check('email.settings'))
 	{
-		Observer::observe('view_setting_plugins', function() {
+		Observer::observe('view::settings::after', function() {
 			echo View::factory('email/queue/settings');
 		});
 

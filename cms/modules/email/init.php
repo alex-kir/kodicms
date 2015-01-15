@@ -3,7 +3,7 @@
 Observer::observe('modules::after_load', function() {
 	if (IS_INSTALLED AND ACL::check('system.email.settings'))
 	{
-		Observer::observe('view_setting_plugins', function() {
+		Observer::observe('view::settings::after', function() {
 			echo View::factory('email/settings', array(
 				'settings' => Config::get('email'),
 				'drivers' => Config::get('email', 'drivers', array()),

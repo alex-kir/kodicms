@@ -169,7 +169,7 @@ class Installer {
 
 		Database::$default = 'install';
 		
-		Observer::notify('before_install', $post, $this->_validation);
+		Observer::notify('installer::before', $post, $this->_validation);
 
 		if (isset($post['empty_database']))
 		{
@@ -182,10 +182,13 @@ class Installer {
 		$this->_import_dump($post);
 		$this->_install_modules($post);
 
-		Observer::notify('install', $post);
+		Observer::notify('installer::install', $post);
 
 		$this->_create_site_config($post);
 		$this->_create_config_file($post);
+		
+		Observer::notify('installer::after', $post);
+
 		return TRUE;
 	}
 
